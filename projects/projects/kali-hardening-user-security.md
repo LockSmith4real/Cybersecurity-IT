@@ -23,3 +23,12 @@ Then removed the user and their home directory:
 sudo deluser --remove-home kali
 
 Updated Hostname for Anonymity
+
+### 🔐 8. Enforced Strong Password Policy with PAM
+
+Updated `/etc/pam.d/common-password` to use `pam_pwquality`:
+
+- Minimum length: 12 characters
+- At least 1 uppercase, 1 lowercase, 1 digit, and 1 special character
+- Used `pam-auth-update` to regenerate a valid PAM config
+- Tested with the `passwd` command to confirm weak passwords are rejected
